@@ -5,6 +5,7 @@ const caracteresMaiusculas = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
                                 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 const caracteresEspeciais = ['!' , '?', '@', '#', '$', '%', '&', '*', '-', '_', '+', '=', '/', '.'];
 
+
 function verificarQuantidade(){
     const elemento = document.querySelector('#quantidade')
     const quantidade = Number(elemento.value);
@@ -18,31 +19,58 @@ function verificarQuantidade(){
     };
 };
 
+
 function gerar(){
     const quantidade = document.querySelector('#quantidade').value;
     const numeros = document.querySelector('#numeros').checked;
     const minusculas = document.querySelector('#minusculas').checked;
     const maiusculas = document.querySelector('#maiusculas').checked;
     const especiais = document.querySelector('#especiais').checked;
-
+   
     let caracteres = [];
+    let senha = [];
+
+
+    function sortearCaractere(classe){
+        const i = Math.floor(Math.random() * classe.length);
+        const caractere = classe[i];
+        inserir(caractere);
+    };
+
+    function inserir(caractere){
+        const x = Math.floor(Math.random() * 2);
+        if(x == 1){
+            senha.push(caractere);
+        } else{
+            senha.unshift(caractere);
+        };
+    };
+
 
     if(numeros){
         caracteres = [...caracteres, ...caracteresNumeros];
+        sortearCaractere(caracteresNumeros);
     };
 
     if(minusculas){
         caracteres = [...caracteres, ...caracteresMinusculas];
+        sortearCaractere(caracteresMinusculas);
     };
 
     if(maiusculas){
         caracteres = [...caracteres, ...caracteresMaiusculas];
+        sortearCaractere(caracteresMaiusculas);
     };
 
     if(especiais){
         caracteres = [...caracteres, ...caracteresEspeciais];
+        sortearCaractere(caracteresEspeciais);
+    };
+
+    for(let i = senha.length; i < quantidade; i++){
+        sortearCaractere(caracteres);
     };
 
     const resultado = document.querySelector('#resultado');
-    resultado.value = quantidade;
+    resultado.value = senha.join('');
 };

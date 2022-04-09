@@ -8,26 +8,35 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <form>
-        <label for="quantidade">Quantidade de caracteres: (min. 6 - máx. 32)</label>
-        <input type="number" value="6" id="quantidade" onblur="verificarQuantidade()" onchange="verificarQuantidade()"/>
+    <div id="container">
+        <div id="container_parametros">
+            <div id="container_quantidade">
+                <h2>Quantidade de caracteres <br> <sub>(min. 6 - máx. 32)</sub></h2>
+                <input type="number" value="6" id="quantidade" onblur="verificarQuantidade()" onchange="verificarQuantidade()"/>
+            </div>
+            <div id="container_caracteres">
+                <h2>Tipos de caracteres</h2>
 
-        <label for="numeros" title="0 ... 9">Números (0-9)</label>
-        <input type="checkbox" id="numeros" checked/>
-
-        <label for="minusculas" title="a ... z">Letras minúsculas (a-z)</label>
-        <input type="checkbox" id="minusculas" checked/>
-
-        <label for="maiusculas" title="A ... Z">Letras maiúsculas (A-Z)</label>
-        <input type="checkbox" id="maiusculas" checked/>
-
-        <label for="especiais" title="! ? @ # $ % & * - _ + = / .">Caracteres especiais</label>
-        <input type="checkbox" id="especiais" checked/>
-    </form>
-
-        <button type="button" onclick="gerar()">Gerar</button>
-
-        <input type="text" id="resultado"/>
+                <label for="numeros" title="0 ... 9">Números</label>
+                <input type="checkbox" id="numeros" checked/>
+                
+                <label for="minusculas" title="a ... z">Letras minúsculas</label>
+                <input type="checkbox" id="minusculas" checked/>
+                
+                <label for="maiusculas" title="A ... Z">Letras maiúsculas</label>
+                <input type="checkbox" id="maiusculas" checked/>
+                
+                <label for="especiais" title="! ? @ # $ % & * - _ + = / .">Caracteres especiais <br>
+                    <sub>(! ? @ # $ % & * - _ + = / .)</sub>
+                </label>
+                <input type="checkbox" id="especiais" checked/>
+            </div>
+        </div>
+        <div id="container_resultado">
+            <button type="button" onclick="gerar()">Gerar</button>
+            <input type="text" id="resultado" readonly/>
+        </div>
+    </div>
 </body>
 
 <script src="script.js"></script>

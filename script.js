@@ -5,7 +5,21 @@ const caracteresMaiusculas = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
                                 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 const caracteresEspeciais = ['!' , '?', '@', '#', '$', '%', '&', '*', '-', '_', '+', '=', '/', '.'];
 
+function verificarQuantidade(){
+    const elemento = document.querySelector('#quantidade')
+    const quantidade = Number(elemento.value);
+    
+    if(quantidade > 32){
+        elemento.value = 32;
+    };
+
+    if(quantidade < 6){
+        elemento.value = 6;
+    };
+};
+
 function gerar(){
+    const quantidade = document.querySelector('#quantidade').value;
     const numeros = document.querySelector('#numeros').checked;
     const minusculas = document.querySelector('#minusculas').checked;
     const maiusculas = document.querySelector('#maiusculas').checked;
@@ -29,8 +43,6 @@ function gerar(){
         caracteres = [...caracteres, ...caracteresEspeciais];
     };
 
-    console.log(caracteres);
-
     const resultado = document.querySelector('#resultado');
-    resultado.setAttribute('value', 'teste');
+    resultado.value = quantidade;
 };

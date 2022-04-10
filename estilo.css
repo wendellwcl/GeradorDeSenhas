@@ -100,15 +100,29 @@ body{
     flex-direction: column;
 }
 
-#container_resultado button{
+#container_resultado #btn-gerar{
     margin-bottom: 15px;
     padding: 5px;
 }
 
-#container_resultado input{
+#container_resultado div{
+    width: 100%;
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+#container_resultado div input{
+    flex: 1 0 75%;
     text-align: center;
     font-weight: bold;
     padding: 10px;
-    border: 1px solid blueviolet;
-    border-radius: 5px;
+    border: 0;
+}
+
+#container_resultado div #btn-copiar{
+    flex: 1 0;
+    border: 0;
+    background: #C2C2C2;
 }

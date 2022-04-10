@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de senha</title>
     <link rel="stylesheet" href="estilo.css">
+    <script src="https://kit.fontawesome.com/dd77c33531.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="container">
@@ -33,8 +34,11 @@
             </div>
         </div>
         <div id="container_resultado">
-            <button type="button" onclick="gerar()">Gerar</button>
-            <input type="text" id="resultado" readonly/>
+            <button type="button" id="btn-gerar" onclick="gerar()">Gerar</button>
+            <div>
+                <input type="text" id="resultado" readonly/>
+                <button type="button" id="btn-copiar" onclick="copiarTexto()"><i class="fa-solid fa-copy"></i></button>
+            </div>
         </div>
     </div>
 </body>

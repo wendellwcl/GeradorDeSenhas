@@ -74,3 +74,11 @@ function gerar(){
     const resultado = document.querySelector('#resultado');
     resultado.value = senha.join('');
 };
+
+
+function copiarTexto() {
+    const copiar = document.querySelector('#resultado');
+    copiar.select();
+    copiar.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+};

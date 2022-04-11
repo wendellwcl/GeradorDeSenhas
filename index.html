@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de senha</title>
+    <title>Gerador de senhas</title>
     <link rel="stylesheet" href="estilo.css">
     <script src="https://kit.fontawesome.com/dd77c33531.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <h1>Gerador de senhas</h1>
     <div id="container">
-        <div id="container_parametros">
-            <div id="container_quantidade">
-                <h2>Quantidade de caracteres <br> <sub>(min. 6 - máx. 32)</sub></h2>
+        <div id="container-parametros">
+            <div id="container-quantidade">
+                <h2>Quantidade de caracteres</h2>
+                <span>( min. 6 - máx. 32 )</span>
                 <input type="number" value="6" id="quantidade" onblur="verificarQuantidade()" onchange="verificarQuantidade()"/>
             </div>
-            <div id="container_caracteres">
+            <div id="container-caracteres">
                 <h2>Tipos de caracteres</h2>
 
                 <label for="numeros" title="0 ... 9">Números</label>
@@ -27,18 +29,16 @@
                 <label for="maiusculas" title="A ... Z">Letras maiúsculas</label>
                 <input type="checkbox" id="maiusculas" checked/>
                 
-                <label for="especiais" title="! ? @ # $ % & * - _ + = / .">Caracteres especiais <br>
-                    <sub>(! ? @ # $ % & * - _ + = / .)</sub>
-                </label>
+                <label for="especiais" title="! ? @ # $ % & * - _ + = / .">Caracteres especiais</label>
                 <input type="checkbox" id="especiais" checked/>
             </div>
         </div>
-        <div id="container_resultado">
-            <button type="button" id="btn-gerar" onclick="gerar()">Gerar</button>
-            <div>
-                <input type="text" id="resultado" readonly/>
-                <button type="button" id="btn-copiar" onclick="copiarTexto()"><i class="fa-solid fa-copy"></i></button>
-            </div>
+
+        <button type="button" id="btn-gerar" onclick="gerar()">Gerar</button>
+
+        <div id="container-resultado">
+            <input type="text" id="resultado" readonly/>
+            <button type="button" id="btn-copiar" onclick="copiarTexto()"><i class="fa-regular fa-copy"></i> Copiar</button>
         </div>
     </div>
 </body>

@@ -28,101 +28,99 @@ input[type=number] {
 body{
     font: 14px 'Roboto', sans-serif;
     background-color: #EFEFEF;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+h2{
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+span{
+    text-align: center;
+    font-size: .8em;
 }
 
 #container{
-    max-width: 600px;
+    min-width: 350px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid red;
+    background-color: #696969;
 }
 
-#container_parametros{
+#container-parametros{
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-#container_quantidade, #container_caracteres{
+#container-quantidade, #container-caracteres{
     display: flex;
     flex-direction: column;
     padding: 15px;
-    border: 1px solid black;
     border-radius: 5px;
+    background-color: #A9A9A9;
 }
 
-#container_quantidade h2{
-    text-align: center;
-}
-
-#container_quantidade input{
+#container-quantidade input{
     width: 80px;
-    margin: 15px auto 15px;
+    margin:  15px auto 0;
     padding: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
     text-align: center;
-    border: 1px solid black;
+    border: 0;
     border-radius: 5px;
 }
 
-#container_caracteres h2{
-    text-align: center;
-}
-
-#container_caracteres label{
+#container-caracteres label{
     display: block;
     width: 100%;
     padding: 5px;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-#container_caracteres label{
     margin-top: 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #D3D3D3;
 }
 
-#container_caracteres input{
+#container-caracteres input{
     display: none;
 }
 
-#container_resultado{
-    width: 100%;
+#btn-gerar{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #A9A9A9;
 }
 
-#container_resultado{
+#container-resultado{
     display: flex;
     flex-direction: column;
-}
-
-#container_resultado #btn-gerar{
-    margin-bottom: 15px;
-    padding: 5px;
-}
-
-#container_resultado div{
-    width: 100%;
-    display: flex;
     border-radius: 5px;
     overflow: hidden;
-    border: 1px solid black;
 }
 
-#container_resultado div input{
-    flex: 1 0 75%;
+#container-resultado #resultado{
+    padding: 10px;
     text-align: center;
     font-weight: bold;
-    padding: 10px;
     border: 0;
 }
 
-#container_resultado div #btn-copiar{
-    flex: 1 0;
+#container-resultado #btn-copiar{
+    font-weight: bold;
+    padding: 10px;
     border: 0;
     background: #C2C2C2;
 }

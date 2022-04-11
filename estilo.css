@@ -93,6 +93,8 @@ h2{
     border-radius: 5px;
     color: #FFFFFF;
     background-color: #3C97FF;
+    border: 1px solid transparent;
+    transition: .5s;
 }
 
 #container-caracteres input{
@@ -114,7 +116,6 @@ h2{
     color: #3C97FF;
     background-color: #FFFFFF;
 }
-
 
 #container-resultado{
     display: flex;

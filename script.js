@@ -82,3 +82,33 @@ function copiarTexto() {
     copiar.setSelectionRange(0, 99999);
     document.execCommand("copy");
 };
+
+
+function estadoInicial(){
+    document.querySelector('#quantidade').value = 6;
+
+    document.querySelector('#numeros').checked = true;
+    label('numeros');
+    document.querySelector('#minusculas').checked = true;
+    label('minusculas');
+    document.querySelector('#maiusculas').checked = true;
+    label('maiusculas');
+    document.querySelector('#especiais').checked = false;
+    label('especiais');
+}
+
+
+function label(id){
+    const elemento = document.querySelector(`#${id}`);
+    const label = document.querySelector(`#label-${id}`);
+    
+    if(elemento.checked){
+        label.style.border = '1px solid transparent';
+        label.style.color = '#FFFFFF';
+        label.style.backgroundColor = '#3C97FF';
+    } else{
+        label.style.border = '1px solid #3C97FF';
+        label.style.color = '#3C97FF';
+        label.style.backgroundColor = 'transparent';
+    };
+};

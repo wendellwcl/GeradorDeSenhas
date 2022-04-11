@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="estilo.css">
     <script src="https://kit.fontawesome.com/dd77c33531.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="estadoInicial()">
     <h1>Gerador de senhas</h1>
     <div id="container">
         <div id="container-parametros">
@@ -20,17 +20,17 @@
             <div id="container-caracteres">
                 <h2>Tipos de caracteres</h2>
 
-                <label for="numeros" title="0 ... 9">Números</label>
-                <input type="checkbox" id="numeros" checked/>
+                <label for="numeros" id="label-numeros" title="0 ... 9">Números</label>
+                <input type="checkbox" id="numeros" checked onchange="label(this.id)"/>
                 
-                <label for="minusculas" title="a ... z">Letras minúsculas</label>
-                <input type="checkbox" id="minusculas" checked/>
+                <label for="minusculas" id="label-minusculas" title="a ... z">Letras minúsculas</label>
+                <input type="checkbox" id="minusculas" checked onchange="label(this.id)"/>
                 
-                <label for="maiusculas" title="A ... Z">Letras maiúsculas</label>
-                <input type="checkbox" id="maiusculas" checked/>
+                <label for="maiusculas" id="label-maiusculas" title="A ... Z">Letras maiúsculas</label>
+                <input type="checkbox" id="maiusculas" checked onchange="label(this.id)"/>
                 
-                <label for="especiais" title="! ? @ # $ % & * - _ + = / .">Caracteres especiais</label>
-                <input type="checkbox" id="especiais" checked/>
+                <label for="especiais" id="label-especiais" title="! ? @ # $ % & * - _ + = / .">Caracteres especiais</label>
+                <input type="checkbox" id="especiais" onchange="label(this.id)"/>
             </div>
         </div>
 

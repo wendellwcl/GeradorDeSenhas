@@ -6,6 +6,7 @@ const caracteresMaiusculas = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
 const caracteresEspeciais = ['!' , '?', '@', '#', '$', '%', '&', '*', '-', '_', '+', '=', '/', '.'];
 
 
+/*Verificando e manipulando a quantidade mínima e máxima*/
 function verificarQuantidade(){
     const elemento = document.querySelector('#quantidade')
     const quantidade = Number(elemento.value);
@@ -20,6 +21,7 @@ function verificarQuantidade(){
 };
 
 
+/*Gerando a senha*/
 function gerar(){
     const quantidade = document.querySelector('#quantidade').value;
     const numeros = document.querySelector('#numeros').checked;
@@ -76,6 +78,7 @@ function gerar(){
 };
 
 
+/*Copiando o resultado gerado*/
 function copiarTexto() {
     const copiar = document.querySelector('#resultado');
     copiar.select();
@@ -84,6 +87,7 @@ function copiarTexto() {
 };
 
 
+/*Garantindo o estado inicial esperado*/
 function estadoInicial(){
     document.querySelector('#quantidade').value = 6;
 
@@ -95,9 +99,12 @@ function estadoInicial(){
     label('maiusculas');
     document.querySelector('#especiais').checked = false;
     label('especiais');
+
+    document.querySelector('#resultado').value = '';
 }
 
 
+/*Alterando estilo dos botões de acordo com o checked*/
 function label(id){
     const elemento = document.querySelector(`#${id}`);
     const label = document.querySelector(`#label-${id}`);
@@ -109,6 +116,6 @@ function label(id){
     } else{
         label.style.border = '1px solid #3C97FF';
         label.style.color = '#3C97FF';
-        label.style.backgroundColor = 'transparent';
+        label.style.backgroundColor = '#FFFFFF';
     };
 };

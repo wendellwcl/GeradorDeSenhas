@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de senhas</title>
     <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" href="img/icon.png">
     <script src="https://kit.fontawesome.com/dd77c33531.js" crossorigin="anonymous"></script>
 </head>
 <body onload="estadoInicial()">
@@ -15,7 +16,6 @@
     <div id="container">
         
         <div id="container-parametros">
-            
             <div id="container-quantidade">
                 <h2>Quantidade de caracteres</h2>
                 <span>( min. 6 - máx. 32 )</span>
@@ -25,13 +25,13 @@
             <div id="container-caracteres">
                 <h2>Tipos de caracteres</h2>
 
-                <label for="numeros" id="label-numeros" title="0 ... 9">Números</label>
+                <label for="numeros" id="label-numeros" title="0 . . . 9">Números</label>
                 <input type="checkbox" id="numeros" checked onchange="label(this.id)"/>
                 
-                <label for="minusculas" id="label-minusculas" title="a ... z">Letras minúsculas</label>
+                <label for="minusculas" id="label-minusculas" title="a . . . z">Letras minúsculas</label>
                 <input type="checkbox" id="minusculas" checked onchange="label(this.id)"/>
                 
-                <label for="maiusculas" id="label-maiusculas" title="A ... Z">Letras maiúsculas</label>
+                <label for="maiusculas" id="label-maiusculas" title="A . . . Z">Letras maiúsculas</label>
                 <input type="checkbox" id="maiusculas" checked onchange="label(this.id)"/>
                 
                 <label for="especiais" id="label-especiais" title="! ? @ # $ % & * - _ + = / .">Caracteres especiais</label>

@@ -27,11 +27,12 @@ input[type=number] {
 
 body{
     font: 14px 'Roboto', sans-serif;
-    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(180deg, #FFFFFF, #CDD8DF);
 }
 
 h2{
@@ -95,6 +96,17 @@ h2{
     background-color: #3C97FF;
     border: 1px solid transparent;
     transition: .5s;
+    position: relative;
+}
+
+#container-caracteres label:hover::before{
+    content: attr(title);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background-color: inherit;
 }
 
 #container-caracteres input{
@@ -107,8 +119,8 @@ h2{
     padding: 10px;
     border: 0;
     border-radius: 5px;
-    color: #FFFFFF;
-    background: #3C97FF;
+    color: #000000;
+    background: #CDD8DF;
     transition: .3s;
 }
 

@@ -48,7 +48,7 @@ h2{
     padding: 30px;
     border-radius: 15px;
     background-color: #1F2044;
-    background-image: linear-gradient(180deg, #9f90f4 0, #6c6cd8 50%, #274bbd 100%);
+    background-image: linear-gradient(180deg, #3C97FF, #2C599E);
 }
 
 #container-parametros{
@@ -108,13 +108,13 @@ h2{
     border: 0;
     border-radius: 5px;
     color: #FFFFFF;
-    background-color: #3C97FF;
+    background: #3C97FF;
     transition: .3s;
 }
 
 #btn-gerar:hover{
-    color: #3C97FF;
-    background-color: #FFFFFF;
+    color: #000000;
+    background-color: #FAB53C;
 }
 
 #container-resultado{
@@ -137,4 +137,10 @@ h2{
     border: 0;
     color: #FFFFFF;
     background: #3C97FF;
+    transition: .3s;
+}
+
+#container-resultado #btn-copiar:hover{
+    color: #000000;
+    background-color: #FAB53C;
 }

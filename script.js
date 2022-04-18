@@ -21,24 +21,30 @@ function verificarQuantidade(){
 };
 
 
-/*Gerando a senha*/
-function gerar(){
-    const quantidade = document.querySelector('#quantidade').value;
+/* Checar caracteres selecionados */
+function caracteresSelecionados(){
     const numeros = document.querySelector('#numeros').checked;
     const minusculas = document.querySelector('#minusculas').checked;
     const maiusculas = document.querySelector('#maiusculas').checked;
     const especiais = document.querySelector('#especiais').checked;
-   
+    return([numeros, minusculas, maiusculas, especiais]);
+}
+
+
+/*Gerando a senha*/
+function gerar(){
+    const quantidade = document.querySelector('#quantidade').value;
+    const [ numeros, minusculas, maiusculas, especiais ] = caracteresSelecionados();
     let caracteres = [];
     let senha = [];
-
-
+    
+    
     function sortearCaractere(classe){
         const i = Math.floor(Math.random() * classe.length);
         const caractere = classe[i];
         inserir(caractere);
     };
-
+    
     function inserir(caractere){
         const x = Math.floor(Math.random() * 2);
         if(x == 1){
@@ -47,7 +53,7 @@ function gerar(){
             senha.unshift(caractere);
         };
     };
-
+    
 
     if(numeros){
         caracteres = [...caracteres, ...caracteresNumeros];
@@ -104,8 +110,9 @@ function estadoInicial(){
 }
 
 
-/*Alterando estilo dos botões de acordo com o checked*/
+/*Controle do estilo dos botões de caracteres & do texto do botão #btn-gerar de acordo com os checkboxes*/
 function label(id){
+    /* Alterando o estilo visual (botões dos caracteres) */
     const elemento = document.querySelector(`#${id}`);
     const label = document.querySelector(`#label-${id}`);
     
@@ -117,5 +124,15 @@ function label(id){
         label.style.border = '1px solid #3C97FF';
         label.style.color = '#3C97FF';
         label.style.backgroundColor = '#FFFFFF';
+    };
+
+    /* Alterando o texto (#btn-gerar) */
+    const [ numeros, minusculas, maiusculas, especiais ] = caracteresSelecionados();
+    const btn = document.querySelector('#btn-gerar');
+
+    if(!numeros && !minusculas && !maiusculas && !especiais){
+        btn.innerHTML = 'Selecione um tipo de caractere';
+    } else{
+        btn.innerHTML = 'Gerar';
     };
 };
